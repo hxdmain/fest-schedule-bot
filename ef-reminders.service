@@ -1,0 +1,15 @@
+[Unit]
+Description=Electric Forest Reminder Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=vanpi
+WorkingDirectory=/home/vanpi/meshmonitor/ef-bot
+EnvironmentFile=/home/vanpi/meshmonitor/ef-bot/config.env
+ExecStart=/usr/bin/python3 /home/vanpi/meshmonitor/ef-bot/reminder_daemon.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
